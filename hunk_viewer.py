@@ -29,8 +29,6 @@ cve = []
 with open("dumps/cve_array.pkl","rb") as f:
     cve = pickle.load(f)
 
-test = "test"
-st.download_button('Download test', test, 'text/csv')
 maxindex = len(cve)-1
 print(maxindex)
 if "cveindex" not in st.session_state:
