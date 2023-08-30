@@ -29,12 +29,15 @@ cve = []
 with open("dumps/cve_array.pkl","rb") as f:
     cve = pickle.load(f)
 
-
+test = "test"
+st.download_button('Download test', test, 'text/csv')
 maxindex = len(cve)-1
 print(maxindex)
 if "cveindex" not in st.session_state:
     st.session_state.cveindex = 0
 page = st.empty()
+with open("annotation.txt") as f:
+    st.download_button("Download CSV",f)
 with st.expander("Jump to..."):
     st.markdown("Current Index/Primary key (starts from ZERO): "+str(st.session_state.cveindex))
     jumpnum = st.text_input("Jump to what index","0")
