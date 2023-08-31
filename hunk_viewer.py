@@ -62,9 +62,9 @@ with page.container():
         ans = []
         reasons = []
         for i in indices:
-            st.markdown("Hunk "+str(i))
+            st.markdown("**Hunk "+str(i)+"**")
             st.code(hunks[i])
-            ans.append(st.radio("Is it relevant?", ["yes", "no"], key=i))
+            ans.append(st.radio("Is it relevant to fixing the vulnerability?", ["yes", "no"], key=i))
             reasons.append(st.text_input("Reasoning if no","Type here", key=10000-i))
         submitted = st.form_submit_button("Submit")#,on_click=write_ans, args=(cve_to_index,ans,reasons,maxindex,))
         if submitted:
