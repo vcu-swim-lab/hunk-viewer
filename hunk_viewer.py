@@ -37,6 +37,7 @@ with open("dumps/cve_array.pkl","rb") as f:
     cve = pickle.load(f)
 cve_to_index = []
 thing = [cve_to_index.append(c) for c in cve if c not in cve_to_index]
+print(cve_to_index)
 maxindex = len(cve_to_index)-1
 print(maxindex)
 if "cveindex" not in st.session_state:
